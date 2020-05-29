@@ -6,6 +6,7 @@ import {
 	TouchableOpacity,
 	ImageBackground
 } from "react-native";
+import defaultStyles from "../constants/default-styles";
 
 export default function MealItem(props) {
 	return (
@@ -25,9 +26,15 @@ export default function MealItem(props) {
 						</ImageBackground>
 					</View>
 					<View style={{ ...styles.mealRow, ...styles.mealDetail }}>
-						<Text>{props.duration}m</Text>
-						<Text>{props.complexity.toUpperCase()}</Text>
-						<Text>{props.affordability.toUpperCase()}</Text>
+						<Text style={{ ...defaultStyles.text }}>
+							{props.duration}m
+						</Text>
+						<Text style={{ ...defaultStyles.text }}>
+							{props.complexity.toUpperCase()}
+						</Text>
+						<Text style={{ ...defaultStyles.text }}>
+							{props.affordability.toUpperCase()}
+						</Text>
 					</View>
 				</View>
 			</View>
@@ -41,7 +48,8 @@ const styles = StyleSheet.create({
 		width: "100%",
 		backgroundColor: "#f5f5f5",
 		borderRadius: 10,
-		overflow: 'hidden'
+		overflow: "hidden",
+		marginVertical: 10
 	},
 	bgImage: {
 		width: "100%",
@@ -57,8 +65,8 @@ const styles = StyleSheet.create({
 	mealDetail: {
 		paddingHorizontal: 10,
 		justifyContent: "space-between",
-		alignItems: 'center',
-		height: '15%'
+		alignItems: "center",
+		height: "15%"
 	},
 	titleContainer: {
 		backgroundColor: "rgba(0,0,0,0.5)",
